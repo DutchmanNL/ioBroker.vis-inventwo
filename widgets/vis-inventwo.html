@@ -24,12 +24,14 @@
 
 			<%
 				let backCol = "";
+				backCol = vis.states[this.data.iButtonCol + '.val'];
+				/*
 				if(vis.editMode){
-					backCol = vis.states[this.data.iButtonCol + '.val']
+					backCol = vis.states[this.data.iButtonCol + '.val'];
 				}
 				else{
 					backCol = '{' + this.data.iButtonCol + '}';
-				}
+				}*/
 			%>
 
             <div class="vis-inventwo-button"
