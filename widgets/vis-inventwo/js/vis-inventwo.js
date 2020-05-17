@@ -281,6 +281,9 @@ vis.binds["vis-inventwo"] = {
 
 		if (!vis.editMode) {
 
+			let test = vis.states[data.iButtonCol + '.val'];
+			console.log("testtest:   " + test);
+
 			$this.parent().click(function () {
 				var val = vis.states[oid + '.val'];
 				var type = data.iValueType;
