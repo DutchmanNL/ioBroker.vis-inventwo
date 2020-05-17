@@ -17,7 +17,7 @@
 		iOpacity[1]/slider,0,1,0.1;iOpacityCtn[1]/slider,0,1,0.1;iTextColor[#ffffff]/color;"
 		data-vis-set="vis-inventwo"
 		data-vis-type="ctrl"
-		data-vis-name="Switch">
+		data-vis-name="Switch 2">
 
 	<div class="vis-widget <%== this.data.attr('class') %> waves-effect waves-light" style="width:110px; height:110px; overflow:visible; cursor:pointer;z-index:1" id="<%= this.data.attr('wid') %>" >
 		<div class="vis-inventwo-class vis-widget-body <%== this.data.attr('class') %>">
@@ -25,14 +25,6 @@
 			<%
 				let backCol = "";
 				backCol = vis.states[this.data.iButtonCol + '.val'];
-				console.log(backCol + " test");
-				/*
-				if(vis.editMode){
-					backCol = vis.states[this.data.iButtonCol + '.val'];
-				}
-				else{
-					backCol = '{' + this.data.iButtonCol + '}';
-				}*/
 			%>
 
             <div class="vis-inventwo-button"
