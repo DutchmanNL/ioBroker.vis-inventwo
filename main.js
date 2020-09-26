@@ -11,7 +11,9 @@ const utils = require("@iobroker/adapter-core");
 // Load  your  modules here, e.g.:
 // const fs = require("fs");
 
+
 class visInventwo extends utils.Adapter {
+
 
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
@@ -22,10 +24,11 @@ class visInventwo extends utils.Adapter {
 			name: "vis-inventwo",
 		});
 		this.on("ready", this.onReady.bind(this));
-		//this.on("objectChange", this.onObjectChange.bind(this));
-		//this.on("stateChange", this.onStateChange.bind(this));
+		// this.on("objectChange", this.onObjectChange.bind(this));
+		// this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+
 	}
 
 	/**
@@ -34,136 +37,423 @@ class visInventwo extends utils.Adapter {
 	async onReady() {
 		// Initialize your adapter here
 
-//      this.log.info("config Stripes: " + this.config.Stripes);
-//      this.log.info("config Background: " + this.config.Background);
-//      this.log.info("config Radius: " + this.config.Radius);
-//      this.log.info("config Info: " + this.config.Info);
-
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
 		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
 		*/
-		
-        await this.setObjectAsync("CSS.Button", {
+
+
+		let cssData = {
+
+			"Dark-Theme": [
+				//Widget
+				{
+					dp: "Widget.Color",
+					name: "Widget-Color",
+					write: false,
+					def: "#333333",
+					unit: ""
+				},
+				{
+					dp: "Widget.Active-Color",
+					name: "Widget-Active-Color",
+					def: "#455618",
+					unit: ""
+				},
+				{
+					dp: "Widget.Radius",
+					name: "Widget-Radius",
+					def: "12px 0px 12px 0px",
+					unit: ""
+				},
+				{
+					dp: "Widget.Shadow-Blur",
+					name: "Widget-Shadow-Blur",
+					def: "2",
+					unit: "px"
+				},
+
+			],
+			"Light-Theme": [
+				{
+					dp: "Widget.Color",
+					name: "Widget-Color",
+					def: "#ffffff",
+					unit: ""
+				},
+				{
+					dp: "Widget.Active-Color",
+					name: "Widget-Active-Color",
+					def: "#455618",
+					unit: ""
+				},
+				{
+					dp: "Widget.Radius",
+					name: "Widget-Radius",
+					def: "12px 0px 12px 0px",
+					unit: ""
+				},
+				{
+					dp: "Widget.Shadow-Blur",
+					name: "Widget-Shadow-Blur",
+					def: "2",
+					unit: "px"
+				},
+			],
+			"Custom-Theme": [
+				{
+					dp: "Widget.Color",
+					name: "Widget-Color",
+					def: "#ffffff",
+					unit: ""
+				},
+				{
+					dp: "Widget.Active-Color",
+					name: "Widget-Active-Color",
+					def: "#455618",
+					unit: ""
+				},
+				{
+					dp: "Widget.Radius",
+					name: "Widget-Radius",
+					def: "12px 0px 12px 0px",
+					unit: ""
+				},
+				{
+					dp: "Widget.Shadow-Blur",
+					name: "Widget-Shadow-Blur",
+					def: "2",
+					unit: "px"
+				},
+			]
+		};
+
+
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-X", {
 			type: "state",
 			common: {
-				name: "Button-Color",
-				type: "string",
-				role: "inventwo.color",
+				name: "Widget-Shadow-X",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "2",
+				unit: "px",
 			},
 			native: {},
-        });
-        await this.setObjectAsync("CSS.Active", {
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Y", {
 			type: "state",
 			common: {
-				name: "Button-Active-Color",
-				type: "string",
-				role: "inventwo.color",
+				name: "Widget-Shadow-Y",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "2",
+				unit: "px",
 			},
-            native: {},
-        });
-        await this.setObjectAsync("CSS.Text", {
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Size", {
+			type: "state",
+			common: {
+				name: "Widget-Shadow-Size",
+				type: "number",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "1",
+				unit: "px",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Color", {
+			type: "state",
+			common: {
+				name: "Widget-Shadow-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#111111",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Active-Color", {
+			type: "state",
+			common: {
+				name: "Widget-Shadow-Active-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#111111",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Size", {
+			type: "state",
+			common: {
+				name: "Widget-Border-Size",
+				type: "number",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "0",
+				unit: "px",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Color", {
+			type: "state",
+			common: {
+				name: "Widget-Border-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#FFFFFF",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Active-Color", {
+			type: "state",
+			common: {
+				name: "Widget-Border-Active-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#FFFFFF",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Opacity", {
+			type: "state",
+			common: {
+				name: "Widget-Opacity",
+				type: "number",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "1",
+			},
+			native: {},
+		});
+
+		//CONTENT
+
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Text-Color", {
 			type: "state",
 			common: {
 				name: "Text-Color",
 				type: "string",
-				role: "inventwo.color",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "#FFFFFF",
 			},
 			native: {},
-       });
-  /*
-        await this.setObjectAsync("CSS.Stripes", {
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Text-Size", {
 			type: "state",
 			common: {
-				name: "Tripes-Color",
-				type: "string",
-				role: "inventwo.color",
+				name: "Text-Size",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "12",
+				unit: "px",
 			},
 			native: {},
-        });
-        await this.setObjectAsync("CSS.Background", {
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Blur", {
 			type: "state",
 			common: {
-				name: "Background-Color",
-				type: "string",
-				role: "inventwo.color",
+				name: "Inside-Shadow-Blur",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "0",
+				unit: "px",
 			},
 			native: {},
-        });
-        await this.setObjectAsync("CSS.Radius", {
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-X", {
 			type: "state",
 			common: {
-				name: "Button-Radius",
-				type: "string",
-				role: "inventwo.design",
+				name: "Inside-Shadow-X",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
 				write: true,
+				def: "0",
+				unit: "px",
 			},
 			native: {},
-        });
-       
-        await this.setObjectAsync("Info", {
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Y", {
 			type: "state",
 			common: {
-				name: "Adapter-Version",
-				type: "string",
-				role: "inventwo.info",
+				name: "Inside-Shadow-Y",
+				type: "number",
+				role: "inventwo.CSS",
 				read: true,
-				write: false,
+				write: true,
+				def: "0",
+				unit: "px",
 			},
 			native: {},
-        });
-*/
-        
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Size", {
+			type: "state",
+			common: {
+				name: "Inside-Shadow-Size",
+				type: "number",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "0",
+				unit: "px",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Color", {
+			type: "state",
+			common: {
+				name: "Inside-Shadow-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#111111",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Active-Color", {
+			type: "state",
+			common: {
+				name: "Inside-Shadow-Active-Color",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "#111111",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Opacity", {
+			type: "state",
+			common: {
+				name: "Content-Opacity",
+				type: "number",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "1",
+			},
+			native: {},
+		});
+
+		// BACKGROUND
+
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Background.URL", {
+			type: "state",
+			common: {
+				name: "Background-URL",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "localhost",
+			},
+			native: {},
+		});
+		this.setObjectNotExistsAsync("CSS.Default-Theme.Background.Opacity", {
+			type: "state",
+			common: {
+				name: "Background-Opacity",
+				type: "string",
+				role: "inventwo.CSS",
+				read: true,
+				write: true,
+				def: "1",
+			},
+			native: {},
+		});
+
+
+		//Function NICHT LÖSCHEN
+
+		for (const [theme, data] of Object.entries(cssData)) {
+			for (const [cssName, val] of Object.entries(data)) {
+				this.setObjectNotExistsAsync("CSS." + theme + "." + val.dp, {
+					type: "state",
+					common: {
+						name: val.name,
+						type: "string",
+						role: "inventwo.CSS",
+						read: true,
+						write: val.write,
+						def: val.def,
+						unit: val.unit
+					},
+					native: {},
+				});
+
+			}
+		}
+
 		// in this template all states changes inside the adapters namespace are subscribed
-        this.subscribeStates("CSS.Button");
-        this.subscribeStates("CSS.Active");
-        this.subscribeStates("CSS.Text");
-//      this.subscribeStates("CSS.Stripes");
-//      this.subscribeStates("CSS.Background");
-//      this.subscribeStates("CSS.Radius");
-//      this.subscribeStates("CSS.Info");
+
+		//Widget
+		this.subscribeStates("CSS.Default-Theme.Widget.Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Active-Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Radius");
+		this.subscribeStates("CSS.Default-Theme.Widget.Shadow-Blur");
+		this.subscribeStates("CSS.Default-Theme.Widget.Shadow-Size");
+		this.subscribeStates("CSS.Default-Theme.Widget.Shadow-Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Shadow-Active-Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Border-Size");
+		this.subscribeStates("CSS.Default-Theme.Widget.Border-Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Border-Active-Color");
+		this.subscribeStates("CSS.Default-Theme.Widget.Opacity");
+
+		//CONTENT
+		this.subscribeStates("CSS.Default-Theme.Content.Text-Color");
+		this.subscribeStates("CSS.Default-Theme.Content.Text-Size");
+		this.subscribeStates("CSS.Default-Theme.Content.Shadow-Blur");
+		this.subscribeStates("CSS.Default-Theme.Content.Shadow-Size");
+		this.subscribeStates("CSS.Default-Theme.Content.Shadow-Color");
+		this.subscribeStates("CSS.Default-Theme.Content.Shadow-Active-Color");
+		this.subscribeStates("CSS.Default-Theme.Content.Opacity");
+
+		//BACKGROUND
+		this.subscribeStates("CSS.Default-Theme.Background.URL");
+		this.subscribeStates("CSS.Default-Theme.Background.Opacity");
 
 		/*
 		setState examples
 		you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
 		*/
 		// the variable testVariable is set to true as command (ack=false)
-		//await this.setStateAsync("testVariable", true);
+		//this.setStateAsync("testVariable", true);
 
 		// same thing, but the value is flagged "ack"
 		// ack should be always set to true if the value is received from or acknowledged from the target system
-		if(await this.getStateAsync("CSS.Button") == null)
-        	await this.setStateAsync("CSS.Button", { val: "#333333", ack: true });
-		if(await this.getStateAsync("CSS.Active") == null)
-        	await this.setStateAsync("CSS.Active", { val: "#455618", ack: true });
-		if(await this.getStateAsync("CSS.Text") == null)
-        	await this.setStateAsync("CSS.Text", { val: "#C7C7C7", ack: true });
-//      await this.setStateAsync("CSS.Stripes", { val: this.config.Stripes, ack: true });
-//      await this.setStateAsync("CSS.Background", { val: this.config.Background, ack: true });
-//      await this.setStateAsync("CSS.Radius", { val: this.config.Radius, ack: true });
-//      await this.setStateAsync("Info", { val: this.config.Version, ack: true });
-       
 
 		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		//await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
+		//this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
 
 		// examples for the checkPassword/checkGroup functions
-		//let result = await this.checkPasswordAsync("admin", "ioBroker");
+		//let result = this.checkPasswordAsync("admin", "ioBroker");
 		//this.log.info("check user admin pw ioBroker: " + result);
 
-		//result = await this.checkGroupAsync("admin", "admin");
+		//result = this.checkGroupAsync("admin", "admin");
 		//this.log.info("check group user admin group admin: " + result);
 	}
 
@@ -204,6 +494,7 @@ class visInventwo extends utils.Adapter {
 		if (state) {
 			// The state was changed
 			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+
 		} else {
 			// The state was deleted
 			this.log.info(`state ${id} deleted`);
