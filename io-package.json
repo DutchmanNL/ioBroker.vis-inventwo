@@ -185,16 +185,19 @@
       "web"
     ],
     "singleton": true,
-    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
+    "localLink": "http://%traccarIp%:%traccarPort%",
     "adminTab": {
       "link": "/adapter/vis-inventwo/index_m.html?%instance%",
       "fa-icon": "dashboard",
       "singleton": true,
       "name": {
         "en": "inventwo config",
-        "de": "inventwo config"
+        "de": "inventwo Widgets"
       }
     },
+    "highlight": true,
+    "noIntro": false,
+    "noConfig": false,
     "messagebox": true,
     "mode": "daemon",
     "type": "visualization-widgets",
@@ -208,8 +211,8 @@
         "js-controller": ">=1.4.2"
       },
       "vis"
-    ]
-
+    ],
+    "installedFrom": "https://github.com/inventwo/ioBroker.vis-inventwo/tarball/jkvarel-dev"
   },
   "native": {},
   "objects": [],
