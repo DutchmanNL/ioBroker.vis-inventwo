@@ -47,7 +47,7 @@ class visInventwo extends utils.Adapter {
 		let cssData = {
 
 			"Dark-Theme": [
-				//Widget
+				//WIDGET DARK
 				{
 					dp: "Widget.Color",
 					name: "Widget-Color",
@@ -58,6 +58,7 @@ class visInventwo extends utils.Adapter {
 				{
 					dp: "Widget.Active-Color",
 					name: "Widget-Active-Color",
+					write: false,
 					def: "#455618",
 					unit: ""
 				},
@@ -65,327 +66,166 @@ class visInventwo extends utils.Adapter {
 					dp: "Widget.Radius",
 					name: "Widget-Radius",
 					def: "12px 0px 12px 0px",
+					write: false,
 					unit: ""
 				},
 				{
 					dp: "Widget.Shadow-Blur",
 					name: "Widget-Shadow-Blur",
+					write: false,
 					def: "2",
 					unit: "px"
 				},
-
+				{
+					dp: "Widget.Shadow-X",
+					name: "Widget-Shadow-X",
+					write: false,
+					def: "2",
+					unit: "px"
+				},
+				{
+					dp: "Widget.Shadow-Y",
+					name: "Widget-Shadow-Y",
+					write: false,
+					def: "2",
+					unit: "px"
+				},
+				{
+					dp: "Widget.Shadow-Size",
+					name: "Widget-Shadow-Size",
+					write: false,
+					def: "1",
+					unit: "px"
+				},
+				{
+					dp: "Widget.Shadow-Color",
+					name: "Widget-Shadow-Color",
+					write: false,
+					def: "#111111",
+					unit: ""
+				},
+				{
+					dp: "Widget.Shadow-Active-Color",
+					name: "Widget-Shadow-Active-Color",
+					write: false,
+					def: "#111111",
+					unit: ""
+				},
+				{
+					dp: "Widget.Border-Size",
+					name: "Widget-Border-Size",
+					write: false,
+					def: "0",
+					unit: "px"
+				},
+				{
+					dp: "Widget.Border-Color",
+					name: "Widget-Border-Color",
+					write: false,
+					def: "#FFFFFF",
+					unit: ""
+				},
+				{
+					dp: "Widget.Border-Active-Color",
+					name: "Widget-Border-Active-Color",
+					write: false,
+					def: "#FFFFFF",
+					unit: ""
+				},
+				{
+					dp: "Widget.Opacity",
+					name: "Widget-Opacity",
+					write: false,
+					def: "1",
+					unit: ""
+				},
+				// CONTENT DARK
+				{
+					dp: "Content.Text-Color",
+					name: "Content-Text-Color",
+					write: false,
+					def: "#FFFFFF",
+					unit: ""
+				},
+				{
+					dp: "Content.Text-Size",
+					name: "Content-Text-Size",
+					write: false,
+					def: "12",
+					unit: "px"
+				},
+				{
+					dp: "Content.Shadow-Blur",
+					name: "Content-Shadow-Blur",
+					write: false,
+					def: "0",
+					unit: "px"
+				},
+				{
+					dp: "Content.Shadow-X",
+					name: "Content-Shadow-X",
+					write: false,
+					def: "0",
+					unit: "px"
+				},
+				{
+					dp: "Content.Shadow-Y",
+					name: "Content-Shadow-Y",
+					write: false,
+					def: "0",
+					unit: "px"
+				},
+				{
+					dp: "Content.Shadow-Size",
+					name: "Content-Shadow-Size",
+					write: false,
+					def: "0",
+					unit: "px"
+				},
+				{
+					dp: "Content.Shadow-Color",
+					name: "Content-Shadow-Color",
+					write: false,
+					def: "#111111",
+					unit: ""
+				},
+				{
+					dp: "Content.Shadow-Active-Color",
+					name: "Content-Shadow-Active-Color",
+					write: false,
+					def: "#111111",
+					unit: ""
+				},
+				{
+					dp: "Content.Opacity",
+					name: "Content-Opacity",
+					write: false,
+					def: "1",
+					unit: ""
+				},
+				// BACKGROUND DARK
+				{
+					dp: "Background.URL",
+					name: "Background-URL",
+					write: false,
+					def: "localhost",
+					unit: ""
+				},
+				{
+					dp: "Background.Opacity",
+					name: "Background-Opacity",
+					write: false,
+					def: "1",
+					unit: ""
+				},
 			],
 			"Light-Theme": [
-				{
-					dp: "Widget.Color",
-					name: "Widget-Color",
-					def: "#ffffff",
-					unit: ""
-				},
-				{
-					dp: "Widget.Active-Color",
-					name: "Widget-Active-Color",
-					def: "#455618",
-					unit: ""
-				},
-				{
-					dp: "Widget.Radius",
-					name: "Widget-Radius",
-					def: "12px 0px 12px 0px",
-					unit: ""
-				},
-				{
-					dp: "Widget.Shadow-Blur",
-					name: "Widget-Shadow-Blur",
-					def: "2",
-					unit: "px"
-				},
+
 			],
 			"Custom-Theme": [
-				{
-					dp: "Widget.Color",
-					name: "Widget-Color",
-					def: "#ffffff",
-					unit: ""
-				},
-				{
-					dp: "Widget.Active-Color",
-					name: "Widget-Active-Color",
-					def: "#455618",
-					unit: ""
-				},
-				{
-					dp: "Widget.Radius",
-					name: "Widget-Radius",
-					def: "12px 0px 12px 0px",
-					unit: ""
-				},
-				{
-					dp: "Widget.Shadow-Blur",
-					name: "Widget-Shadow-Blur",
-					def: "2",
-					unit: "px"
-				},
+
 			]
 		};
-
-
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-X", {
-			type: "state",
-			common: {
-				name: "Widget-Shadow-X",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "2",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Y", {
-			type: "state",
-			common: {
-				name: "Widget-Shadow-Y",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "2",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Size", {
-			type: "state",
-			common: {
-				name: "Widget-Shadow-Size",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "1",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Color", {
-			type: "state",
-			common: {
-				name: "Widget-Shadow-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#111111",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Shadow-Active-Color", {
-			type: "state",
-			common: {
-				name: "Widget-Shadow-Active-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#111111",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Size", {
-			type: "state",
-			common: {
-				name: "Widget-Border-Size",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "0",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Color", {
-			type: "state",
-			common: {
-				name: "Widget-Border-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#FFFFFF",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Border-Active-Color", {
-			type: "state",
-			common: {
-				name: "Widget-Border-Active-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#FFFFFF",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Widget.Opacity", {
-			type: "state",
-			common: {
-				name: "Widget-Opacity",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "1",
-			},
-			native: {},
-		});
-
-		//CONTENT
-
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Text-Color", {
-			type: "state",
-			common: {
-				name: "Text-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#FFFFFF",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Text-Size", {
-			type: "state",
-			common: {
-				name: "Text-Size",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "12",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Blur", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-Blur",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "0",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-X", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-X",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "0",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Y", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-Y",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "0",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Size", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-Size",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "0",
-				unit: "px",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Color", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#111111",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Shadow-Active-Color", {
-			type: "state",
-			common: {
-				name: "Inside-Shadow-Active-Color",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "#111111",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Content.Opacity", {
-			type: "state",
-			common: {
-				name: "Content-Opacity",
-				type: "number",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "1",
-			},
-			native: {},
-		});
-
-		// BACKGROUND
-
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Background.URL", {
-			type: "state",
-			common: {
-				name: "Background-URL",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "localhost",
-			},
-			native: {},
-		});
-		this.setObjectNotExistsAsync("CSS.Default-Theme.Background.Opacity", {
-			type: "state",
-			common: {
-				name: "Background-Opacity",
-				type: "string",
-				role: "inventwo.CSS",
-				read: true,
-				write: true,
-				def: "1",
-			},
-			native: {},
-		});
-
 
 		//Function NICHT LÖSCHEN
 

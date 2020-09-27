@@ -185,9 +185,9 @@
       "web"
     ],
     "singleton": true,
-    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
+    "localLink": "#tab-vis-inventwo",
     "adminTab": {
-      "link": "/adapter/vis-inventwo/index_m.html?%instance%",
+      "link": "#tab-vis-inventwo",
       "fa-icon": "dashboard",
       "singleton": true,
       "name": {
@@ -195,8 +195,6 @@
         "de": "inventwo Widgets"
       }
     },
-    "highlight": true,
-    "noIntro": false,
     "noConfig": false,
     "messagebox": true,
     "mode": "daemon",
