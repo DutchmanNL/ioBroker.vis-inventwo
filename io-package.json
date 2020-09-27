@@ -185,31 +185,31 @@
       "web"
     ],
     "singleton": true,
-    "localLink": "https://www.inventwo.com",
+    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
     "adminTab": {
-      "link": "https://www.inventwo.com",
-      "fa-icon": "subtitles"
+      "link": "/adapter/vis-inventwo/index_m.html?%instance%",
+      "fa-icon": "dashboard",
+      "singleton": true,
+      "name": {
+        "en": "inventwo config",
+        "de": "inventwo config"
+      }
     },
-    "welcomeScreen": {
-      "link": "https://www.inventwo.com",
-      "name": "inventwo Config",
-      "img": "vis/img/favicon.png",
-      "color": "#9fdb58",
-      "order": 5
-    },
+    "messagebox": true,
     "mode": "daemon",
     "type": "visualization-widgets",
     "compact": true,
     "connectionType": "local",
     "dataSource": "poll",
     "materialize": true,
+    "materializeTab": true,
     "dependencies": [
       {
         "js-controller": ">=1.4.2"
       },
       "vis"
-    ],
-    "installedFrom": "iobroker.vis-inventwo@2.2.3"
+    ]
+
   },
   "native": {},
   "objects": [],
