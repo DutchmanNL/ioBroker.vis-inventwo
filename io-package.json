@@ -185,16 +185,7 @@
       "web"
     ],
     "singleton": true,
-    "localLink": "http://%traccarIp%:%traccarPort%",
-    "adminTab": {
-      "link": "/adapter/vis-inventwo/index_m.html?%instance%",
-      "fa-icon": "dashboard",
-      "singleton": true,
-      "name": {
-        "en": "inventwo config",
-        "de": "inventwo Widgets"
-      }
-    },
+    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
     "highlight": true,
     "noIntro": false,
     "noConfig": false,
