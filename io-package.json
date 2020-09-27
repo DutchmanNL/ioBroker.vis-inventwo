@@ -191,11 +191,11 @@
       "fa-icon": "subtitles"
     },
     "welcomeScreen": {
-      "link": "vis/index.html",
+      "link": "https://www.inventwo.com",
       "name": "inventwo Config",
       "img": "vis/img/favicon.png",
       "color": "#9fdb58",
-      "order": 0
+      "order": 5
     },
     "mode": "daemon",
     "type": "visualization-widgets",
