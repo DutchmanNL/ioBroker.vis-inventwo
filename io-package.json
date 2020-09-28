@@ -184,6 +184,7 @@
       "vis",
       "web"
     ],
+    "localLink": "http://%bridge%:%port%",
     "singleton": true,
     "noConfig": false,
     "messagebox": true,
