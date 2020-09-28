@@ -185,13 +185,6 @@
       "web"
     ],
     "singleton": true,
-    "welcomeScreen": {
-      "link": "inventwo.html",
-      "name": "inventwo Config",
-      "img": "vis/img/favicon.png",
-      "color": "#9fdb58",
-      "order": 0
-    },
     "noConfig": false,
     "messagebox": true,
     "mode": "daemon",
