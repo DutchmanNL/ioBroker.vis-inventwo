@@ -187,7 +187,6 @@
     "singleton": true,
     "localLink": "#tab-vis-inventwo",
     "adminTab": {
-      "link": "#tab-vis-inventwo",
       "fa-icon": "dashboard",
       "singleton": true,
       "name": {
