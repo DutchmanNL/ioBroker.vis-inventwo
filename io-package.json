@@ -191,7 +191,7 @@
         "de": "Theme Editor"
       },
       "link": "/adapter/vis-inventwo/index_m.html?%instance%",
-      "fa-icon": "info"
+      "fa-icon": "dashboard"
     },
     "singleton": true,
     "noConfig": false,
