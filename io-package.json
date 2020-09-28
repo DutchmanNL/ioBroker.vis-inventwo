@@ -187,8 +187,8 @@
     "adminTab": {
       "singleton": true,
       "name": {
-        "en": "Theme Editor",
-        "de": "Theme Editor"
+        "en": "inventwo VIS",
+        "de": "inventwo VIS"
       },
       "link": "/adapter/vis-inventwo/index_m.html?%instance%",
       "fa-icon": "dashboard"
