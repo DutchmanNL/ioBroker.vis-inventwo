@@ -184,6 +184,7 @@
       "vis",
       "web"
     ],
+    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
     "adminTab": {
       "singleton": true,
       "name": {
