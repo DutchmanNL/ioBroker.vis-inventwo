@@ -185,15 +185,12 @@
       "web"
     ],
     "singleton": true,
-    "localLink": "#tab-instances/config/system.adapter.vis-inventwo.%instance%",
-    "adminTab": {
-      "link": "#tab-instances/config/system.adapter.vis-inventwo.%instance%",
-      "fa-icon": "dashboard",
-      "singleton": true,
-      "name": {
-        "en": "inventwo config",
-        "de": "inventwo Widgets"
-      }
+    "welcomeScreen": {
+      "link": "vis/index.html",
+      "name": "inventwo Config",
+      "img": "vis/img/favicon.png",
+      "color": "#9fdb58",
+      "order": 0
     },
     "noConfig": false,
     "messagebox": true,
