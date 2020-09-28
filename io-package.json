@@ -184,7 +184,15 @@
       "vis",
       "web"
     ],
-    "localLink": "/adapter/vis-inventwo/index_m.html?%instance%",
+    "adminTab": {
+      "singleton": true,
+      "name": {
+        "en": "Theme Editor",
+        "de": "Theme Editor"
+      },
+      "link": "/adapter/vis-inventwo/index_m.html?%instance%",
+      "fa-icon": "info"
+    },
     "singleton": true,
     "noConfig": false,
     "messagebox": true,
