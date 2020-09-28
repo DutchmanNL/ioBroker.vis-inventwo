@@ -184,7 +184,7 @@
       "vis",
       "web"
     ],
-    "localLink": "http://%bridge%:%port%",
+    "localLink": "%protocol%://%ip%:%port%/adapter/vis-inventwo/index_m.html?%instance%",
     "singleton": true,
     "noConfig": false,
     "messagebox": true,
