@@ -187,6 +187,7 @@
     "singleton": true,
     "localLink": "#tab-instances/config/system.adapter.vis-inventwo.%instance%",
     "adminTab": {
+      "link": "#tab-instances/config/system.adapter.vis-inventwo.%instance%",
       "fa-icon": "dashboard",
       "singleton": true,
       "name": {
