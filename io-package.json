@@ -186,7 +186,7 @@
     ],
     "singleton": true,
     "welcomeScreen": {
-      "link": "vis/index.html",
+      "link": "inventwo.html",
       "name": "inventwo Config",
       "img": "vis/img/favicon.png",
       "color": "#9fdb58",
